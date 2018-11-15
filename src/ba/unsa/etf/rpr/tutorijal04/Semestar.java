@@ -28,7 +28,7 @@ public class Semestar {
         this.predmeti = newpredmeti;
     }
 
-    public String getElectoralpredmeti(){
+    public String getIzbornePredmete(){
         String result = new String();
         int i = 1;
         for(Predmet s : this.predmeti){
@@ -52,7 +52,7 @@ public class Semestar {
         }
         return result;
     }
-    public void enrollStudent(Student student, ArrayList<String> electoralpredmeti) throws IllegalECTSException, IllegalArgumentException{
+    public void upisiStudenta(Student student, ArrayList<String> electoralpredmeti) throws IllegalECTSException, IllegalArgumentException{
         if(student == null || electoralpredmeti == null) throw new IllegalArgumentException();
         boolean ima = false;
         for(String electoral : electoralpredmeti) {

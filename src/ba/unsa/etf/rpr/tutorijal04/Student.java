@@ -6,10 +6,9 @@ public class Student {
     private int brojIndeksa;
     private int brojECTS=0;
 
-    Student(String ime, String prezime, int brojIndeksa){
+    Student(String ime, String prezime){
         this.ime=ime;
         this.prezime=prezime;
-        this.brojIndeksa=brojIndeksa;
     }
 
     public void dodajBodove(int bodovi){
