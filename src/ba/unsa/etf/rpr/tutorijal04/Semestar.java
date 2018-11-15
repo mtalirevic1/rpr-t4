@@ -22,7 +22,7 @@ public class Semestar {
             sum += t.getItem3();
             if(t.getItem4() == ObavezniPredmet.class)
                 newpredmeti.add(new ObavezniPredmet(t.getItem1(), t.getItem2(), t.getItem3()));
-            else newpredmeti.add(new Electoral(t.getItem1(), t.getItem2(), t.getItem3()));
+            else newpredmeti.add(new IzborniPredmet(t.getItem1(), t.getItem2(), t.getItem3()));
         }
         if(sum < 30) throw new IllegalECTSException("");
         this.predmeti = newpredmeti;
