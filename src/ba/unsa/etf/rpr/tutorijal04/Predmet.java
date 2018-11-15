@@ -8,7 +8,36 @@ public abstract class Predmet{
     private String profesor;
     private int brojECTS;
 
-    Predmet(String naziv, String profesor, int brojECTS){}
+    Predmet(String naziv, String profesor, int brojECTS){
+        this.naziv=naziv;
+        this.profesor=profesor;
+        this.brojECTS=brojECTS;
+        studenti=new ArrayList<Student>();
+    }
+
+    public void upisiStudenta(Student student){
+        for(Student s : studenti)
+            if(s.getBrojIndeksa()==student.getBrojIndeksa()) return;
+        studenti.add(student);
+        student.dodajBodove(getBrojECTS());
+    }
+
+    public void obrisiStudenta(int index){
+        for(int i = 0; i < studenti.size(); i++)
+            if(studenti.get(i).getBrojIndeksa()==index){
+                studenti.get(i).oduzmiBodove(getBrojECTS());
+                studenti.remove(i);
+                return;
+            }
+
+    }
+
+    public String printStudents(){
+        String result = new String();
+        for(int i = 0; i < studenti.size(); i++)
+            result = result + Integer.toString(i + 1) + ". " + studenti.get(i).toString() + "\n";
+        return result;
+    }
 
     public ArrayList<Student> getStudenti() {
         return studenti;

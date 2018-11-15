@@ -6,7 +6,11 @@ public class Student {
     private int brojIndeksa;
     private int brojECTS=0;
 
-    Student(String ime, String prezime, int brojIndeksa){}
+    Student(String ime, String prezime, int brojIndeksa){
+        this.ime=ime;
+        this.prezime=prezime;
+        this.brojIndeksa=brojIndeksa;
+    }
 
     public void dodajBodove(int bodovi){
         brojECTS+=bodovi;
@@ -14,11 +18,6 @@ public class Student {
 
     public void oduzmiBodove(int bodovi){
         brojECTS-=bodovi;
-    }
-
-    @Override
-    public String toString(){
-        return "";
     }
 
     public String getIme() {
@@ -51,5 +50,10 @@ public class Student {
 
     public void setBrojECTS(int brojECTS) {
         this.brojECTS = brojECTS;
+    }
+
+    @Override
+    public String toString() {
+        return getIme() + " " + getPrezime() + " " + Integer.toString(getBrojIndeksa()) + " " + Integer.toString(getBrojECTS());
     }
 }
